@@ -9,8 +9,7 @@ class ContactForm extends Component {
 
   handleChange = ({ target }) => {
     this.setState({
-      [target.name]: target.value,
-      [target.number]: target.value,
+      [target.name]: target.value
     });
   };
 
@@ -26,7 +25,8 @@ class ContactForm extends Component {
     };
 
     this.props.addFriend(formData);
-    event.currentTarget.reset();
+    
+    this.setState({ name: '', number: '' });
   };
 
   render() {
